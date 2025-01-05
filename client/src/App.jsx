@@ -12,7 +12,9 @@ import AdolescentTherapyPage from './Pages/AdoTherapyPage';
 import CoupleTherapyPage from './Pages/CoupleTherapyPage';
 import ScrollToTop from './component/ScrollToTop';
 import FAQPage from './Pages/FAQPage';
-
+import CabinetPage from './Pages/CabinetPage';
+import CabinetPortPage from './Pages/CabinetPortPage';
+import WeePsyPage from './Pages/WeePsyPage';
 export default function App() {
   return (
     <BrowserRouter>
@@ -29,6 +31,10 @@ export default function App() {
             <Route path="/services/thérapeutique/couples" element={<CoupleTherapyPage/>} />
             <Route path="/services/thérapeutique/enfants" element={<ChildTherapyPage />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/cabinets" element={<CabinetPage/>} />
+            <Route path="/cabinet-port" element={<CabinetPortPage/>} />
+            <Route path="/weepsy" element={<WeePsyPage/>} />
+            
             <Route path="*" element={<HomePage />} />
             <Route path="/thérapie" element={<TherapiesPage />} />
           </Route>

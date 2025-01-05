@@ -219,14 +219,14 @@ const FAQPage = () => {
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <motion.h1 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-light text-gray-900 mt-20"
+              className="text-4xl font-bold text-[#3a7ca5] mb-8 text-center mt-20"
             >
               F.A.Q.
             </motion.h1>
             <motion.h2 
               variants={fadeInUp}
               transition={{ delay: 0.2 }}
-              className="text-2xl md:text-3xl font-light text-gray-700"
+              className="text-gray-700 text-lg mb-12 text-center max-w-3xl mx-auto px-4"
             >
               Je réponds à vos questions sur la psychologie
             </motion.h2>
