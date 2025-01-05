@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Phone, Mail, MapPin, Plus } from "lucide-react";
 import image from "../assets/image.png";
 import FaqHeader from "../component/FaqHeader";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -18,16 +21,40 @@ const ContactPage = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    try {
+      const response = await fetch("http://localhost:4000/api/contact/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de l’ajout du contact");
+      }
+
+      const data = await response.json();
+      toast.success(data.message); 
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+        newsletter: false,
+      });
+    } catch (error) {
+      toast.error(error.message); 
+    }
   };
 
   return (
     <div className="min-h-screen bg-emerald-50">
+      <ToastContainer />
       <div className="max-w-7xl mx-auto p-6 pt-32">
-        {" "}
-        {/* Augmenté le padding-top ici */}
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Form Section */}
           <div className="bg-white rounded-3xl shadow-xl p-8">
@@ -111,7 +138,7 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#3a7ca5]  text-white px-6 py-3 rounded-lg  transition-all shadow-lg font-medium"
+                className="w-full bg-[#3a7ca5] text-white px-6 py-3 rounded-lg transition-all shadow-lg font-medium"
               >
                 Envoyer
               </button>
@@ -127,7 +154,7 @@ const ContactPage = () => {
                   alt="Profile"
                   className="rounded-full w-32 h-32 object-cover mx-auto"
                 />
-                <div className="absolute bottom-0 right-0 bg-[#3a7ca5]  text-white p-2 rounded-full">
+                <div className="absolute bottom-0 right-0 bg-[#3a7ca5] text-white p-2 rounded-full">
                   <Plus size={20} />
                 </div>
               </div>
@@ -142,7 +169,7 @@ const ContactPage = () => {
               <div className="space-y-4 pt-4">
                 <a
                   href="tel:0783346776"
-                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#3a7ca5]  transition-colors"
+                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#3a7ca5] transition-colors"
                 >
                   <Phone size={20} />
                   <span>07 83 34 67 76</span>
@@ -150,7 +177,7 @@ const ContactPage = () => {
 
                 <a
                   href="mailto:barbarapara@example.fr"
-                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#3a7ca5]  transition-colors"
+                  className="flex items-center justify-center space-x-3 text-gray-600 hover:text-[#3a7ca5] transition-colors"
                 >
                   <Mail size={20} />
                   <span>barbarapara@example.fr</span>
@@ -170,7 +197,6 @@ const ContactPage = () => {
         </div>
       </div>
       <FaqHeader />
-
     </div>
   );
 };

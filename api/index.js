@@ -1,53 +1,34 @@
 import express from "express";
-import dotenv from "dotenv";
+import mongoose from "mongoose";
 import cors from "cors";
-import cookieParser from "cookie-parser";
-import path from "path";
-import PostRoute from "./routes/posts/postRoute.js";
-import connectDB from "./utils/database.js";
+import dotenv from "dotenv";
+import rdvRoutes from "./routes/rdvRoutes.js";
+import ContactRoutes from "./routes/ContactRoutes.js";
 
-
-// Load environment variables from .env file
 dotenv.config();
 
-// Connection avec MongoDB
-connectDB();
-
 const app = express();
-const __dirname = path.resolve();
 
-// Middleware
-
-app.use(express.json());
 app.use(cors());
-app.use(cookieParser());
+app.use(express.json());
+// app.use(cookieParser());
 
-// Routes
-app.use("/api/posts", PostRoute);
+const port = process.env.PORT || 5000;
+const mongoURL = process.env.MONGO_URI;
 
-// Fichiers statiques (frontend)
-app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use("/api/rdv", rdvRoutes);
+app.use("/api/contact", ContactRoutes);
 
-// Redirection pour les routes non gérées
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+mongoose
+  .connect(mongoURL)
+  .then(() => {
+    console.log("Connected to MongoDB");
+    app.listen(port, () => {
+      console.log(`API is running on port ${port}`);
+    });
+  })
+  .catch((error) =>
+    console.error("Error connecting to MongoDB:", error.message)
+  );
 
-// Middleware de gestion des erreurs
-app.use((error, req, res, next) => {
-  console.error("Server error:", error);
-  const statusCode = error.statusCode || 500;
-  const message = error.message || "Erreur de serveur";
-  return res.status(statusCode).json({
-    success: false,
-    message,
-    statusCode,
-  });
-});
-
-// Lancement du serveur
-const PORT = process.env.PORT || 2000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default app;
