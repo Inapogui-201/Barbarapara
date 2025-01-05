@@ -1,0 +1,53 @@
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import path from "path";
+import PostRoute from "./routes/posts/postRoute.js";
+import connectDB from "./utils/database.js";
+
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Connection avec MongoDB
+connectDB();
+
+const app = express();
+const __dirname = path.resolve();
+
+// Middleware
+
+app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
+
+// Routes
+app.use("/api/posts", PostRoute);
+
+// Fichiers statiques (frontend)
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+// Redirection pour les routes non gérées
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
+// Middleware de gestion des erreurs
+app.use((error, req, res, next) => {
+  console.error("Server error:", error);
+  const statusCode = error.statusCode || 500;
+  const message = error.message || "Erreur de serveur";
+  return res.status(statusCode).json({
+    success: false,
+    message,
+    statusCode,
+  });
+});
+
+// Lancement du serveur
+const PORT = process.env.PORT || 2000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
