@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import {Link} from "react-router-dom"
 
 const FooterSection = () => {
   return (
@@ -49,7 +50,7 @@ const FooterSection = () => {
 
         {/* Copyright */}
         <div className="text-center mt-8 border-t border-white pt-4">
-          <p>&copy; {new Date().getFullYear()} Barbara Para. Tous droits réservés.</p>
+          <p>&copy; {new Date().getFullYear()} Barbara Para. Tous droits réservés. | designed by <Link to={"https://www.mrcode.ma"} className="hover:underline hover:text-" target="_blank">Mr.Code</Link></p>
         </div>
       </div>
     </footer>

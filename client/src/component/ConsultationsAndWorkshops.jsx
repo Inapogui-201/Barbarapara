@@ -1,4 +1,7 @@
 import React from 'react';
+import IMAGE1 from "../assets/img1.jpg";
+import IMAGE2 from "../assets/img2.jpg"
+import IMAGE3 from "../assets/emrd2.jpg"
 
 
 const ConsultationsAndWorkshops = () => {
@@ -14,15 +17,15 @@ const ConsultationsAndWorkshops = () => {
         
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div className="flex flex-col items-center">
-            <img src="https://res.cloudinary.com/do2qwucmp/image/upload/v1734478924/barbara/c4n4enzbvakrqmjg93cg.jpg" alt="Cabinet de Saint-Maur-des-Fossés" className="w-full h-[200px] object-cover rounded-lg mb-4" />
+            <img src={IMAGE3} alt="Psychologue Clinicienne Barbarapara Cabinet de Saint-Maur-des-Fossés" className="w-full h-[200px] object-cover rounded-lg mb-4" />
             <h3 className="font-semibold text-[#3a7ca5]">Saint-Maur-des-Fossés</h3>
           </div>
           <div className="flex flex-col items-center">
-            <img src="https://res.cloudinary.com/do2qwucmp/image/upload/v1734478921/barbara/eu7x1eszpgou654v7qk0.jpg" alt="Cabinet de Port-Lesney" className="w-full h-[200px] object-cover rounded-lg mb-4" />
+            <img src={IMAGE1} alt="Psychologue Clinicienne Barbarapara Cabinet de Port-Lesney" className="w-full h-[200px] object-cover rounded-lg mb-4" />
             <h3 className="font-semibold text-[#3a7ca5]">Port-Lesney</h3>
           </div>
           <div className="flex flex-col items-center">
-            <img src="https://res.cloudinary.com/do2qwucmp/image/upload/v1734478926/barbara/gq00dhces2g4culxr2ju.jpg" alt="Paris" className="w-full h-[200px] object-cover rounded-lg mb-4" />
+            <img src={IMAGE2} alt="Psychologue Clinicienne Barbarapara Paris" className="w-full h-[200px] object-cover rounded-lg mb-4" />
             <h3 className="font-semibold text-[#3a7ca5]">Paris</h3>
           </div>
         </div>

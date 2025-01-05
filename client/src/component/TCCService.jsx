@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import IMAGE from "../assets/tcc.avif"
+import { Link } from 'react-router-dom';
 
 const TCCService = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,8 +13,8 @@ const TCCService = () => {
     >
       <figure>
         <img
-          src="https://static.wixstatic.com/media/cdbeb3_ce6460f3b175481ab42b6c112aa28053~mv2.jpg/v1/fill/w_713,h_467,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/teaserbox_25767099.jpg"
-          alt="Thérapie Comportementale et Cognitive"
+          src={IMAGE}
+          alt="Psychologue Clinicienne Barbarapara Thérapie Comportementale et Cognitive"
           className="transition-opacity duration-300"
         />
       </figure>
@@ -26,12 +28,12 @@ const TCCService = () => {
             <p>
               Les TCC sont des thérapies brèves qui agissent sur les pensées, émotions et comportements. Elles traitent efficacement l’anxiété, la dépression et les phobies, en aidant à remplacer les pensées négatives par des pensées adaptées pour un changement durable.
             </p>
-            <a
-              href="/therapie"
-              className="btn  bg-primary hover:bg-primary text-white mt-4"
+            <Link
+              to={"/thérapie"}
+              className="btn  bg-primary border-none hover:bg-primary text-white mt-4"
             >
               En savoir plus
-            </a>
+            </Link>
           </div>
         )}
       </div>

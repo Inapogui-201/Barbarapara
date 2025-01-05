@@ -16,21 +16,21 @@ import FAQPage from './Pages/FAQPage';
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop /> {/* Ajoutez ce composant ici */}
+      <ScrollToTop />
       <div className="bg-red-500">
         <Routes>
           <Route element={<Layout/>}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/appointment" element={<AppointmentPage />} />
-            <Route path="/about" element={<AboutMePage />} />
+            <Route path="/prise/de/rendez-vous" element={<AppointmentPage />} />
+            <Route path="/a-propos-de-moi" element={<AboutMePage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/services/adultes" element={<AdultTherapyPage />} />
-            <Route path="/adolescents" element={<AdolescentTherapyPage />} />
-            <Route path="/couples" element={<CoupleTherapyPage/>} />
-            <Route path="/enfants" element={<ChildTherapyPage />} />
+            <Route path="/services/thérapeutique/adultes" element={<AdultTherapyPage />} />
+            <Route path="/services/thérapeutique/adolescents" element={<AdolescentTherapyPage />} />
+            <Route path="/services/thérapeutique/couples" element={<CoupleTherapyPage/>} />
+            <Route path="/services/thérapeutique/enfants" element={<ChildTherapyPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="*" element={<HomePage />} />
-            <Route path="/therapie" element={<TherapiesPage />} />
+            <Route path="/thérapie" element={<TherapiesPage />} />
           </Route>
         </Routes>
       </div>

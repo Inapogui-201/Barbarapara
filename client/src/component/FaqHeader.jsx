@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FaqHeader = () => {
   return (
-    <div className="bg-gray-50/80">
+    <div className="bg-gray-50/80 ">
       <section className="relative py-20">
         {/* Decorative line */}
-        <div className="absolute left-1/2 top-0 h-24 w-px -translate-x-1/2 bg-gray-200"></div>
+        {/* <div className="absolute left-1/2 top-0 h-24 w-px -translate-x-1/2 bg-gray-200"></div> */}
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -27,16 +28,17 @@ const FaqHeader = () => {
 
             {/* Button */}
             <div className="pt-6">
-             <a href="/faq"><button className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-gray-700 bg-primary border-2 border-gray-200 rounded-lg hover:bg-primary transition-colors duration-300 shadow-sm hover:shadow-md">
+             <Link to={"/faq"}>
+             <button className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-gray-50 bg-primary border-none rounded-lg hover:bg-primary transition-colors duration-300 shadow-sm ">
                 Retrouvez ici les questions les plus fréquentes
-                <span className="absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-gray-400 transition-transform duration-300 group-hover:scale-x-100"></span>
-              </button></a> 
+                {/* <span className="absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-gray-400 transition-transform duration-300 group-hover:scale-x-100"></span> */}
+              </button></Link> 
             </div>
           </div>
         </div>
 
         {/* Decorative line */}
-        <div className="absolute left-1/2 bottom-0 h-24 w-px -translate-x-1/2 bg-gray-200"></div>
+        {/* <div className="absolute left-1/2 bottom-0 h-24 w-px -translate-x-1/2 bg-gray-200"></div> */}
       </section>
     </div>
   );

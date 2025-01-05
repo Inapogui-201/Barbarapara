@@ -12,6 +12,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import img from "../assets/barbarapara.png"
+import { Link } from 'react-router-dom';
 
 const AboutMePage = () => {
   const fadeInUpVariant = {
@@ -101,8 +102,8 @@ const AboutMePage = () => {
               Mon approche est humaine, globale et personnalisée. Je prends en compte l'être humain dans sa globalité en m'appuyant sur des méthodes complémentaires qui permettent de travailler en profondeur sur les blocages, les souffrances ou les transitions de vie.
               </p>
               <div className="flex gap-4">
-              <a
-                href="/appointment"
+              <Link
+                to={"/prise/de/rendez-vous"}
                 className="bg-primary text-white px-6 py-3 rounded-full 
                 flex items-center justify-center gap-2 font-semibold 
                  transition-colors duration-300 
@@ -111,7 +112,7 @@ const AboutMePage = () => {
                 <Calendar size={20} />
                 Prenez Rendez-vous
                 <ArrowRight size={20} />
-              </a>
+              </Link>
               </div>
             </motion.div>
 

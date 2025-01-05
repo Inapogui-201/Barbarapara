@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Shield, MessageCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Heart, Shield, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FeatureCard = ({ icon, title, description }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -23,34 +23,38 @@ const AdolescentTherapyPage = () => {
     {
       icon: <Heart className="w-6 h-6 text-blue-600" />,
       title: "Soutien et Accompagnement",
-      description: "Une thérapie de soutien qui accompagne le processus adolescent, une période de profonds remaniements vers l'âge adulte."
+      description:
+        "Une thérapie de soutien qui accompagne le processus adolescent, une période de profonds remaniements vers l'âge adulte.",
     },
     {
       icon: <Shield className="w-6 h-6 text-blue-600" />,
       title: "Espace de Liberté",
-      description: "Un cadre souple où l'adolescent peut s'exprimer librement, tout en respectant son besoin d'indépendance et de maîtrise."
+      description:
+        "Un cadre souple où l'adolescent peut s'exprimer librement, tout en respectant son besoin d'indépendance et de maîtrise.",
     },
     {
       icon: <MessageCircle className="w-6 h-6 text-blue-600" />,
       title: "Approche Adaptative",
-      description: "Des entretiens qui s'adaptent aux besoins : uniques ou réguliers, avec ou sans implication parentale selon le souhait de l'adolescent."
-    }
+      description:
+        "Des entretiens qui s'adaptent aux besoins : uniques ou réguliers, avec ou sans implication parentale selon le souhait de l'adolescent.",
+    },
   ];
 
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative min-h-screen">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('https://static.wixstatic.com/media/cdbeb3_effb136ea9e342da96f6d55c450f114e~mv2.jpg/v1/fill/w_713,h_474,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Psychologue%20Adolescent%20Barbara%20Para.jpg')",
-            backgroundAttachment: 'fixed'
+          style={{
+            backgroundImage:
+              "url('https://static.wixstatic.com/media/cdbeb3_effb136ea9e342da96f6d55c450f114e~mv2.jpg/v1/fill/w_713,h_474,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Psychologue%20Adolescent%20Barbara%20Para.jpg')",
+            backgroundAttachment: "fixed",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="relative z-10 container mx-auto px-6 h-screen flex items-center"
@@ -64,8 +68,8 @@ const AdolescentTherapyPage = () => {
             >
               Votre espace thérapeutique
             </motion.span>
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -73,31 +77,32 @@ const AdolescentTherapyPage = () => {
             >
               Thérapie pour adolescents
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="text-xl text-gray-200 leading-relaxed max-w-2xl"
             >
-              Un accompagnement adapté pour soutenir les adolescents dans leur développement et leur quête d'identité.
+              Un accompagnement adapté pour soutenir les adolescents dans leur
+              développement et leur quête d'identité.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
               className="flex flex-wrap gap-4"
             >
-             <Link 
-                           to="/contact" 
-                           className="bg-primary text-white px-6 py-3 rounded-full 
+              <Link
+                to={"/contact"}
+                className="bg-primary text-white px-6 py-3 rounded-full 
                            flex items-center justify-center gap-2 font-semibold 
                             transition-colors duration-300 
                            shadow-lg hover:shadow-xl"
-                         >
-                           Nous Contacter <ArrowRight className="w-5 h-5" />
-                         </Link>
+              >
+                Nous Contacter <ArrowRight className="w-5 h-5" />
+              </Link>
             </motion.div>
           </div>
         </motion.div>
@@ -117,64 +122,78 @@ const AdolescentTherapyPage = () => {
       {/* Section Approche */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-4xl mx-auto space-y-24"
           >
             <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-gray-900">Le Processus Thérapeutique</h2>
+              <h2 className="text-4xl font-bold text-gray-900">
+                Le Processus Thérapeutique
+              </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700">
-                  La psychothérapie de l'adolescent est le plus souvent une thérapie de soutien et d'accompagnement 
-                  du processus adolescent, période de profonds remaniements au cours duquel il lui faut se séparer 
-                  de ses parents, s'individualiser, devenir adulte.
+                  La psychothérapie de l'adolescent est le plus souvent une
+                  thérapie de soutien et d'accompagnement du processus
+                  adolescent, période de profonds remaniements au cours duquel
+                  il lui faut se séparer de ses parents, s'individualiser,
+                  devenir adulte.
                 </p>
                 <p className="text-gray-700">
-                  C'est à partir d'échanges autour d'anecdotes familiales, de bavardages qu'il entretient avec ses 
-                  camarades, de disputes, de son activité sur les réseaux sociaux, que le thérapeute écoute l'adolescent 
-                  dans sa complexité et ses revirements au jour le jour.
+                  C'est à partir d'échanges autour d'anecdotes familiales, de
+                  bavardages qu'il entretient avec ses camarades, de disputes,
+                  de son activité sur les réseaux sociaux, que le thérapeute
+                  écoute l'adolescent dans sa complexité et ses revirements au
+                  jour le jour.
                 </p>
               </div>
             </div>
 
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://static.wixstatic.com/media/cdbeb3_effb136ea9e342da96f6d55c450f114e~mv2.jpg/v1/fill/w_713,h_474,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Psychologue%20Adolescent%20Barbara%20Para.jpg" 
-                alt="Thérapie Adolescent" 
+              <img
+                src="https://static.wixstatic.com/media/cdbeb3_effb136ea9e342da96f6d55c450f114e~mv2.jpg/v1/fill/w_713,h_474,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Psychologue%20Adolescent%20Barbara%20Para.jpg"
+                alt="Thérapie Adolescent"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-16">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <h3 className="text-2xl font-bold text-gray-900">Démarche Personnalisée</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Démarche Personnalisée
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Certains adolescents peuvent soutenir une demande et venir de leur propre fait aux séances sans 
-                  vouloir que leurs parents ne soient trop associés à cette démarche qu'il souhaite surtout individuelle. 
-                  La psychothérapie permet de diminuer les angoisses, de soulager les blessures narcissiques voire de 
+                  Certains adolescents peuvent soutenir une demande et venir de
+                  leur propre fait aux séances sans vouloir que leurs parents ne
+                  soient trop associés à cette démarche qu'il souhaite surtout
+                  individuelle. La psychothérapie permet de diminuer les
+                  angoisses, de soulager les blessures narcissiques voire de
                   remettre en marche un processus qui se trouvait en panne.
                 </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <h3 className="text-2xl font-bold text-gray-900">Cadre Adaptatif</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Cadre Adaptatif
+                </h3>
                 <p className="text-gray-700 leading-relaxed">
-                  L'organisation des rencontres avec un adolescent demande de la souplesse car la volonté de maîtriser 
-                  la relation et de garder son indépendance est toujours très présente. Des entretiens uniques ou 
-                  renouvelés à la demande de l'adolescent peuvent avoir une valeur thérapeutique considérable.
+                  L'organisation des rencontres avec un adolescent demande de la
+                  souplesse car la volonté de maîtriser la relation et de garder
+                  son indépendance est toujours très présente. Des entretiens
+                  uniques ou renouvelés à la demande de l'adolescent peuvent
+                  avoir une valeur thérapeutique considérable.
                 </p>
               </motion.div>
             </div>
@@ -185,7 +204,7 @@ const AdolescentTherapyPage = () => {
       {/* Section CTA */}
       <section className="py-24 text-black">
         <div className="container mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -193,16 +212,17 @@ const AdolescentTherapyPage = () => {
           >
             <h2 className="text-3xl font-bold">Commencez le Parcours</h2>
             <p className="text-xl text-gray-800 leading-relaxed">
-              Une séance dure en moyenne 1 heure. Les entretiens préliminaires peuvent être l'occasion de comprendre 
-              et de se réapproprier la démarche thérapeutique.
+              Une séance dure en moyenne 1 heure. Les entretiens préliminaires
+              peuvent être l'occasion de comprendre et de se réapproprier la
+              démarche thérapeutique.
             </p>
             <div className="pt-8">
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center gap-3 bg-[#3a7ca5] text-white px-8 py-4 rounded-full
-                hover:bg-[#2c5f7c] transition-all duration-300 text-lg"
+              <Link
+                to="/prise/de/rendez-vous"
+                className="inline-flex items-center gap-3 text-white bg-[#3a7ca5] hover:text-gray-900 px-8 py-4 rounded-full
+                             hover:bg-gray-100 transition-all duration-300 text-lg"
               >
-                Nous Contacter <ArrowRight className="w-5 h-5" />
+                Prendre Rendez-vous <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </motion.div>

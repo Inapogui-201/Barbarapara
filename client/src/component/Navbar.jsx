@@ -1,48 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, ChevronDown } from 'lucide-react';
+import { NavLinks } from '../utils/data';
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
-
-  const servicesDropdown = [
-    {
-      items: [
-        { name: "Thérapie pour adulte", path: "/services/adultes" },
-        { name: "Thérapie pour Adolescents", path: "/adolescents" },
-      ]
-    },
-    {
-      items: [
-        { name: "Thérapie de Couple", path: "/couples" },
-        { name: "Thérapie pour Enfants", path: "/enfants" },
-      ]
-    }
-  ];
-
-  const approachesDropdown = [
-    {
-      items: [
-        { name: "Thérapies Comportementales et Cognitives", path: "/therapie" },
-        { name: "Thérapie par Exposition en Réalité Virtuelle", path: "/therapie" },
-      ]
-    },
-    {
-      items: [
-        { name: "Désensibilisation par les mouvements oculaires", path: "/therapie" },
-      ]
-    }
-  ];
-
-  const NavLinks = [
-    { name: 'Accueil', path: '/' },
-    { name: 'Mes Présentations', dropdown: servicesDropdown },
-    { name: 'Mes Spécialités', dropdown: approachesDropdown },
-    { name: 'Contact', path: '/contact' },
-    { name: 'A propos de moi', path: '/about' }
-  ];
 
   const handleMouseEnter = (name) => {
     setActiveDropdown(name);
@@ -69,10 +33,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center relative">
         <Link to="/" className="flex items-center space-x-4">
-          <img src="https://res.cloudinary.com/do2qwucmp/image/upload/v1734479680/barbara/ut3ijl6usdnq2x18kzel.png" alt="Logo" className="w-14"/>
+          <img src="https://res.cloudinary.com/do2qwucmp/image/upload/v1734479680/barbara/ut3ijl6usdnq2x18kzel.png" alt="Psychologue Clinicienne Barbarapara Logo" className="w-14"/>
           <div className="flex flex-col mr-12">
-            <span className="text-[#3a7ca5] font-bold text-2xl leading-tight tracking-wider">Barbara Para</span>
-            <span className="text-[#3a7ca5]/80 text-sm font-medium tracking-wide">Psychologue Clinicienne</span>
+            <span className="text-[#3a7ca5] font-bold text-2xl leading-tight tracking-wider" translate="no">Barbara Para</span>
+            <span className="text-[#3a7ca5]/80 text-sm font-medium tracking-wide" >Psychologue Clinicienne</span>
           </div>
         </Link>
 
@@ -159,12 +123,13 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-         <a href="/about"> <button className="text-[#3a7ca5] border border-[#3a7ca5] px-4 py-2 rounded-full hover:bg-[#3a7ca5]/10 transition-colors text-sm font-medium tracking-wider">
+         <Link to={"/a-propos-de-moi"}> <button className="text-[#3a7ca5] border border-[#3a7ca5] px-4 py-2 rounded-full hover:bg-[#3a7ca5]/10 transition-colors text-sm font-medium tracking-wider">
             Mon Espace
-          </button></a>
-          <a href="/appointment"><button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-[#2c6088] transition-colors font-semibold text-sm shadow-md hover:shadow-lg">
+          </button></Link>
+          <Link to={"/prise/de/rendez-vous"}><button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-[#2c6088] transition-colors font-semibold text-sm shadow-md hover:shadow-lg">
             Réserver
-          </button></a>
+          </button>
+          </Link>
         </div>
       </div>
     </nav>

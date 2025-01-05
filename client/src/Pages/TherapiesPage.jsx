@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Img from "../assets/therapie.jpg"
+import FaqHeader from '../component/FaqHeader';
 
 const Hero = () => (
   <section className="relative h-screen overflow-hidden">
@@ -137,6 +138,7 @@ const TherapiesPage = () => {
           />
         ))}
       </div>
+      <FaqHeader />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import IMAGE from "../assets/terv.avif"
+import { Link } from 'react-router-dom';
 const TERVService = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -11,8 +12,8 @@ const TERVService = () => {
     >
       <figure>
         <img
-          src="https://static.wixstatic.com/media/98a643b781ec4fecb0aedc8376cbf4d2.jpg/v1/crop/x_0,y_93,w_7360,h_4742/fill/w_713,h_459,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dispositif%20de%20r%C3%A9alit%C3%A9%20virtuelle.jpg"
-          alt="Thérapie par Exposition en Réalité Virtuelle"
+          src={IMAGE}
+          alt="Psychologue Clinicienne Barbarapara Thérapie par Exposition en Réalité Virtuelle"
           className="transition-opacity duration-300"
         />
       </figure>
@@ -26,12 +27,12 @@ const TERVService = () => {
             <p>
               L’hypnose est une méthode de relaxation qui aide à modifier pensées et comportements négatifs. Utilisée pour traiter phobies, addictions, ou douleurs, elle place le patient en état de concentration tout en gardant son contrôle total.
             </p>
-            <a
-              href="/therapie"
-              className="btn  bg-primary hover:bg-primary text-white mt-4"
+            <Link
+              to={"/thérapie"}
+              className="btn  bg-primary border-none hover:bg-primary text-white mt-4"
             >
               En savoir plus
-            </a>
+            </Link>
           </div>
         )}
       </div>

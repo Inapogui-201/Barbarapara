@@ -1,11 +1,13 @@
 import React from "react";
-import { User, HeartPulse, Calendar, ArrowRight, Link } from "lucide-react";
+import { User, HeartPulse, Calendar, ArrowRight } from "lucide-react";
 import AboutSection from "../component/AboutSection";
 import TCCService from "../component/TCCService";
 import TERVService from "../component/TERVService";
 import EMDRService from "../component/EMDRService";
 import ConsultationsAndWorkshops from "../component/ConsultationsAndWorkshops";
 import FaqHeader from "../component/FaqHeader";
+import { Link } from "react-router-dom";
+
 const HomePage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#f4f7f6]">
@@ -28,8 +30,8 @@ const HomePage = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="/appointment"
+              <Link
+                to={"/prise/de/rendez-vous"}
                 className="bg-primary text-white px-6 py-3 rounded-full 
                 flex items-center justify-center gap-2 font-semibold 
                  transition-colors duration-300 
@@ -38,7 +40,7 @@ const HomePage = () => {
                 <Calendar size={20} />
                 Prenez Rendez-vous
                 <ArrowRight size={20} />
-              </a>
+              </Link>
             </div>
 
             {/* Points forts des Services */}

@@ -90,7 +90,7 @@ const CoupleTherapyPage = () => {
               className="flex flex-wrap gap-4"
             >
               <Link 
-                to="/contact" 
+                to={"/contact"}
                 className="bg-primary text-white px-6 py-3 rounded-full 
                 flex items-center justify-center gap-2 font-semibold 
                  transition-colors duration-300 
@@ -195,13 +195,13 @@ const CoupleTherapyPage = () => {
               de couple.
             </p>
             <div className="pt-8">
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center gap-3 bg-[#3a7ca5] text-white px-8 py-4 rounded-full
-                hover:bg-[#2c5f7c] transition-all duration-300 text-lg"
-              >
-                Nous Contacter <ArrowRight className="w-5 h-5" />
-              </Link>
+               <Link
+                              to="/prise/de/rendez-vous"
+                              className="inline-flex items-center gap-3 text-white bg-[#3a7ca5] hover:text-gray-900 px-8 py-4 rounded-full
+                              hover:bg-gray-100 transition-all duration-300 text-lg"
+                            >
+                              Prendre Rendez-vous <ArrowRight className="w-5 h-5" />
+                            </Link>
             </div>
           </motion.div>
         </div>

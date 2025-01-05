@@ -42,7 +42,7 @@ WorkshopsSection = () => {
               key={index} 
               className="bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              <img src={image} alt={title} className="w-full h-[200px] object-cover rounded-t-xl mb-4" />
+              <img src={image} alt="Psychologue Clinicienne Barbarapara" className="w-full h-[200px] object-cover rounded-t-xl mb-4" />
               <Icon size={40} className="mb-4 text-[#3a7ca5]" />
               <h3 className="font-semibold text-[#3a7ca5] mb-2">{title}</h3>
               <p className="text-gray-600">{description}</p>
