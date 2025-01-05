@@ -4,9 +4,9 @@ import AboutSection from "../component/AboutSection";
 import TCCService from "../component/TCCService";
 import TERVService from "../component/TERVService";
 import EMDRService from "../component/EMDRService";
-import ConsultationsAndWorkshops from "../component/ConsultationsAndWorkshops";
 import FaqHeader from "../component/FaqHeader";
 import { Link } from "react-router-dom";
+import LocationsSection from "../component/LocationsSection";
 
 const HomePage = () => {
   return (
@@ -93,7 +93,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <ConsultationsAndWorkshops />
+      <LocationsSection />
       <FaqHeader />
     </div>
   );

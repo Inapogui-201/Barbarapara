@@ -90,7 +90,7 @@ const AboutSection = () => {
           {/* Image mobile */}
           <div className="md:hidden">
             <img 
-              src="/src/assets/para.jpg" 
+              src={img} 
               alt="Barbara Para" 
               className="rounded-2xl shadow-lg object-cover w-full h-[300px] transform hover:scale-105 transition-transform duration-300"
             />
